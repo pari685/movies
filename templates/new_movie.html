@@ -1,0 +1,9 @@
+<h1> The Movie Database</h1>
+
+<form action="/moviedb/newmovie/" method="post">{% csrf_token %}
+   <ul>
+       {{ form.as_ul}}
+   </ul>
+    <input type="submit" name="submit" value="Add Movie">
+</form>
+
