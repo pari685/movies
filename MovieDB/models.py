@@ -6,12 +6,9 @@ from django.contrib import admin
 
 class Movie(models.Model):
     title = models.CharField(max_length=200)
-    release_date = models.DateField()
-    rating = models.FloatField()
-    director = models.CharField(max_length=200)
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ["title", "release_date", "rating", "director"]
+    list_display = ["title"]
     search_fields = ["title"]
 
 admin.site.register(Movie, ItemAdmin)
