@@ -46,10 +46,23 @@
 
 <div id="section">
     <h1>The Complete List </h1>
-    {% for movie_dict in movie_listing %}
-    <h2>{{ movie_dict.movie_object.title}}</h2>
+ <table style="width:50%">
 
-    {% endfor %}
+    <tr>
+        <th>Movie Title</th>
+     </tr>
+     {% for movie_dict in movie_listing %}
+        <tr>
+            <td>{{ movie_dict.movie_object.title}}</td>
+        </tr>
+
+     {% endfor %}
+</table>
+
+
+    <h2></h2>
+
+
 
 </div>
 
