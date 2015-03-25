@@ -44,18 +44,18 @@ def add_movie_form(request):
 def search(request):
     if request.GET:
         form = MovieForm(request.GET)
+
         if form.is_valid():
+            movie_listing = []
             # Check if the movie already exists in the database
-            check_db = Movie.objects.filter(title=request.POST['title'])
-            if len(check_db) > 0:
-                return render_to_response('results.html', {'result_data': check_db})
+            for movie_object in  Movie.objects.filter(title=request.GET['title']):
+                movie_dict = {'movie_object':movie_object}
+                movie_listing.append(movie_dict)
+            if len(movie_listing) > 0:
+                return render_to_response('results.html', {'search_string': request.GET['title'],
+                                                           'movie_listing': movie_listing})
     form = MovieForm()
     return render(request, 'search.html', {'form': form})
-
-
-
-def add_success(request, movie_id):
-    return render_to_response('add_success.html')
 
 
 def list_all(request):
@@ -64,3 +64,6 @@ def list_all(request):
         movie_dict = {'movie_object': movie_object}
         movie_listing.append(movie_dict)
     return render_to_response('list_all.html', {'movie_listing': movie_listing})
+
+def add_success(request, movie_id):
+    return render_to_response('add_success.html')
