@@ -37,21 +37,20 @@
 </div>
 
 <div id="nav">
-    <a href="..">Home</a><br>
+    <a href="">Home</a><br>
+    <a href="">List All Movies</a><br>
     <a href="../searchmovie/">Search Movie</a><br>
-    <a href="">Add New Movie</a><br>
+    <a href="../addmovieform/">Add New Movie</a><br>
 <br>
 </div>
 
 <div id="section">
-    <h2>Add New Movie to the Database</h2>
-<form method="post">
-    {% csrf_token %}
-    <ul>
-       {{ form.as_p}}
-    </ul>
-    <input type="submit" name="submit" value="Add Movie">
-</form>
+    <h1>The Complete List </h1>
+    {% for movie_dict in movie_listing %}
+    <h2>{{ movie_dict.movie_object.title}}</h2>
+
+    {% endfor %}
+
 </div>
 
 <div id="footer">
@@ -59,12 +58,3 @@ Created using the Python Django Framework by Parikshit Juluri
 </div>
 
 </body>
-
-
-
-
-
-
-
-
-

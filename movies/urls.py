@@ -7,6 +7,8 @@ urlpatterns = patterns('',
                        # url(r'^blog/', include('blog.urls')),
                        url(r'^$', 'MovieDB.views.index'),
                        url(r'^(?P<movie_id>\d+)/results/$', 'MovieDB.views.results'),
+                       url(r'^listmovie/$', 'MovieDB.views.list_all'),
                        url(r'^addmovieform/$', 'MovieDB.views.add_movie_form'),
+                       url(r'^searchmovie/$', 'MovieDB.views.search'),
                        url(r'^admin/', include(admin.site.urls)),
                        )
