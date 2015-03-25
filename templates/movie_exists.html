@@ -1,1 +1,61 @@
-<h1> The Movie {{ movie_title }}Already Exists </h1>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#header {
+    background-color:lightseagreen;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:150px;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:500px;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:lightseagreen;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+<h1>Simple Movie Database</h1>
+</div>
+
+<div id="nav">
+    <a href="..">Home</a><br>
+    <a href="../listmovie/">List All Movies</a><br>
+    <a href="../searchmovie">Search Movie</a><br>
+    <a href="../addmovieform/">Add New Movie</a><br>
+<br>
+</div>
+
+
+<div id="section">
+    <h2> The movie {{movie_title}} Already Exists </h2>
+
+</div>
+
+<div id="footer">
+Created using the Python Django Framework by Parikshit Juluri
+</div>
+
+</body>
+
+

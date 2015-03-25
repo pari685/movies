@@ -48,8 +48,8 @@ def search(request):
         if form.is_valid():
             movie_listing = []
             # Check if the movie already exists in the database
-            for movie_object in  Movie.objects.filter(title=request.GET['title']):
-                movie_dict = {'movie_object':movie_object}
+            for movie_object in Movie.objects.filter(title__contains=request.GET['title']):
+                movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
             if len(movie_listing) > 0:
                 return render_to_response('results.html', {'search_string': request.GET['title'],
