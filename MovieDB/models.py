@@ -9,7 +9,9 @@ class Movie(models.Model):
         ('Horror', 'Horror'),
         ('Drama', 'Drama'),
         ('Comedy', 'Comedy'),
-        ('SciFi', 'SciFi')
+        ('SciFi', 'SciFi'),
+        ('Action', 'Action'),
+        ('Period', 'Period')
     )
     title = models.CharField(max_length=200)
     release = models.DateField()
