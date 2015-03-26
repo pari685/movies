@@ -44,10 +44,6 @@ Temporary Items
 
 # Python
 *.pyc
-<<<<<<< Updated upstream
-*.xml
-=======
->>>>>>> Stashed changes
 *.xml
 .idea/workspace.xml
 *.db
