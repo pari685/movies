@@ -48,7 +48,9 @@
     <h2>Search for a Movie in the Database</h2>
 <form method="get">
     <ul>
-       Title: {{ form.title}}
+       <dt>Title: {{ form.title}}<br><br></dt>
+       <dt>Director: {{form.director}}<br><br></dt>
+       <dt>Genre: {{ form.genre}}<br><br></dt>
     </ul>
     <input type="submit" name="submit" value="Search Movie">
 </form>
