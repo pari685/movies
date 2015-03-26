@@ -45,6 +45,6 @@ Temporary Items
 # Python
 *.pyc
 *.xml
-.idea/workspace.xml
+.idea/*
 *.db
 .idea/workspace.xml
