@@ -14,7 +14,7 @@ class Movie(models.Model):
         ('Period', 'Period')
     )
     title = models.CharField(max_length=200)
-    release = models.DateField()
+    language = models.CharField(max_length=20)
     director = models.CharField(max_length=30)
     genre = models.CharField(max_length=10,
                              choices=GENRE_OPTIONS)

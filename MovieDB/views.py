@@ -60,6 +60,11 @@ def search(request):
                 movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
                 search_string = " ".join((search_string, request.GET['director']))
+        if request.GET['language']:
+            for movie_object in Movie.objects.filter(director__contains=request.GET['director']):
+                movie_dict = {'movie_object': movie_object}
+                movie_listing.append(movie_dict)
+                search_string = " ".join((search_string, request.GET['language']))
         if len(movie_listing) > 0:
             return render_to_response('results.html', {'search_string': search_string,
                                                        'movie_listing': movie_listing})

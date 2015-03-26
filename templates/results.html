@@ -53,15 +53,15 @@
     <tr>
         <th>Movie Title</th>
         <th>Director</th>
-        <th>Release</th>
         <th>Genre</th>
+        <th>Language</th>
      </tr>
      {% for movie_dict in movie_listing %}
         <tr>
             <td align="center" width="40">{{ movie_dict.movie_object.title}}</td>
             <td align="center" width="15">{{ movie_dict.movie_object.director}}</td>
-            <td align="center" width="12">{{ movie_dict.movie_object.release}}</td>
             <td align="center" width="10">{{ movie_dict.movie_object.genre}}</td>
+        <td align="center" width="12">{{ movie_dict.movie_object.language}}</td>
         </tr>
 
      {% endfor %}
