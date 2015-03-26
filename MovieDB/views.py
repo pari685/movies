@@ -61,7 +61,7 @@ def search(request):
                 movie_listing.append(movie_dict)
                 search_string = " ".join((search_string, request.GET['director']))
         if request.GET['language']:
-            for movie_object in Movie.objects.filter(director__contains=request.GET['director']):
+            for movie_object in Movie.objects.filter(language__contains=request.GET['language']):
                 movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
                 search_string = " ".join((search_string, request.GET['language']))
