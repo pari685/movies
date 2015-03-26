@@ -49,22 +49,22 @@ def search(request):
             for movie_object in Movie.objects.filter(title__contains=request.GET['title']):
                 movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
-                search_string = request.GET['title']
+            search_string = request.GET['title']
         if request.GET['genre']:
             for movie_object in Movie.objects.filter(genre__contains=request.GET['genre']):
                 movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
-                search_string = " ".join((search_string, request.GET['genre']))
+            search_string = " ".join((search_string, request.GET['genre']))
         if request.GET['director']:
             for movie_object in Movie.objects.filter(director__contains=request.GET['director']):
                 movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
-                search_string = " ".join((search_string, request.GET['director']))
+            search_string = " ".join((search_string, request.GET['director']))
         if request.GET['language']:
             for movie_object in Movie.objects.filter(language__contains=request.GET['language']):
                 movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
-                search_string = " ".join((search_string, request.GET['language']))
+            search_string = " ".join((search_string, request.GET['language']))
         if len(movie_listing) > 0:
             return render_to_response('results.html', {'search_string': search_string,
                                                        'movie_listing': movie_listing})
