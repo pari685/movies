@@ -45,15 +45,22 @@
 </div>
 
 <div id="section">
-    <h1>The Complete List </h1>
- <table style="width:50%">
+    <h1>Complete List of Movies </h1>
+ <table style="width:150%">
+
 
     <tr>
         <th>Movie Title</th>
+        <th>Director</th>
+        <th>Release</th>
+        <th>Genre</th>
      </tr>
      {% for movie_dict in movie_listing %}
         <tr>
-            <td>{{ movie_dict.movie_object.title}}</td>
+            <td align="center" width="40">{{ movie_dict.movie_object.title}}</td>
+            <td align="center" width="15">{{ movie_dict.movie_object.director}}</td>
+            <td align="center" width="12">{{ movie_dict.movie_object.release}}</td>
+            <td align="center" width="10">{{ movie_dict.movie_object.genre}}</td>
         </tr>
 
      {% endfor %}

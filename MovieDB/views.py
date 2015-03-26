@@ -43,15 +43,14 @@ def add_movie_form(request):
 
 def search(request):
     if request.GET:
-        form = MovieForm(request.GET)
-
-        if form.is_valid():
+        if request.GET['title']:
             movie_listing = []
             # Check if the movie already exists in the database
             for movie_object in Movie.objects.filter(title__contains=request.GET['title']):
                 movie_dict = {'movie_object': movie_object}
                 movie_listing.append(movie_dict)
             if len(movie_listing) > 0:
+                print "Rendering results.html"
                 return render_to_response('results.html', {'search_string': request.GET['title'],
                                                            'movie_listing': movie_listing})
     form = MovieForm()
