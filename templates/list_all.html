@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+    <style>
 #header {
     background-color:lightseagreen;
     color:white;
@@ -46,14 +46,13 @@
 
 <div id="section">
     <h1>Complete List of Movies </h1>
- <table style="width:150%">
-
+ <table id="myTable" class="tablesorter" style="width:150%">
 
     <tr>
-        <th>Movie Title</th>
-        <th>Director</th>
-        <th>Genre</th>
-        <th>Language</th>
+        <th><a href="?sort=title">Movie Title</a></th>
+        <th><a href="?sort=director">Director</a></th>
+        <th><a href="?sort=genre">Genre</a></th>
+        <th><a href="?sort=language">Language</a></th>
      </tr>
      {% for movie_dict in movie_listing %}
         <tr>
@@ -64,12 +63,8 @@
         </tr>
 
      {% endfor %}
+
 </table>
-
-
-    <h2></h2>
-
-
 
 </div>
 

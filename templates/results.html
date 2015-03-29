@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+    <script type="text/javascript" src="jquery-latest.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.js"></script>
+    <style>
 #header {
     background-color:lightseagreen;
     color:white;
@@ -47,15 +49,16 @@
 
 <div id="section">
     <h1>The Search Result for: {{ search_string }} </h1>
-    <table style="width:150%">
-
-
+    <table id="myTable" style="width:150%" class="tablesorter">
+    <thead>
     <tr>
         <th>Movie Title</th>
         <th>Director</th>
         <th>Genre</th>
         <th>Language</th>
      </tr>
+    </thead>
+    <tbody>
      {% for movie_dict in movie_listing %}
         <tr>
             <td align="center" width="40">{{ movie_dict.movie_object.title}}</td>
@@ -65,7 +68,8 @@
         </tr>
 
      {% endfor %}
-</table>
+    <tbody>
+    </table>
 
 </div>
 

@@ -48,6 +48,7 @@ def search(request):
     :param request: page request
     :return: request, HTML Template, movie_listing = the list of Movie objects
     """
+    sort_by = request.GET.get('sort')
     if request.GET:
         movie_listing = []
         search_string = ""
@@ -83,8 +84,10 @@ def search(request):
 
 def list_all(request):
     """ Module to list all the movies in the database"""
+    sort_by = request.GET.get('sort', 'title')
+    print "Ordering by", sort_by
     movie_listing = []
-    for movie_object in Movie.objects.all():
+    for movie_object in Movie.objects.all().order_by(sort_by):
         movie_dict = {'movie_object': movie_object}
         movie_listing.append(movie_dict)
     return render_to_response('list_all.html', {'movie_listing': movie_listing})

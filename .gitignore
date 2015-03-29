@@ -48,3 +48,5 @@ Temporary Items
 *.pyc
 *.pyc
 *.pyc
+*.pyc
+MovieDB/__init__.pyc
