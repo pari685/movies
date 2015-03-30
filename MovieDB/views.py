@@ -67,7 +67,6 @@ def search(request):
     :param request: page request
     :return: request, HTML Template, movie_listing = the list of Movie objects
     """
-    sort_by = request.GET.get('sort')
     if request.GET:
         movie_listing = []
         search_string = ""
